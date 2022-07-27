@@ -3,7 +3,7 @@ project (generic_object_pool)
  
 SET(CXX_FLAGS
  -g
- -rdynamic
+#  -rdynamic
  -fPIC
  -Wall
  -Wextra
