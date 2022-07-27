@@ -3,16 +3,16 @@
 
 namespace cfood {
 
-  template<typename PoolableObject>
-    class PoolableObjectFactory {
-  public:
+template<typename PoolableObject>
+class PoolableObjectFactory {
+public:
     virtual ~PoolableObjectFactory() {
     }
     virtual PoolableObject* create_object() {
-      return new PoolableObject();
+        return new PoolableObject();
     }
     virtual void destroy_object(PoolableObject* obj) {
-      delete obj;
+        delete obj;
     }
     /**
      * called everty time before the object is returned to pool
@@ -23,9 +23,9 @@ namespace cfood {
      * called everty time the object is get from the pool
      */
     virtual void activate_object(PoolableObject* obj) {
-      obj->inc_reuse_count();
+        obj->inc_reuse_count();
     }
-  };
+};
 
 }
 #endif

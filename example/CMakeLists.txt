@@ -3,7 +3,7 @@ project (generic_object_pool)
  
 SET(CXX_FLAGS
  -g
- -rdynamic
+#  -rdynamic
  -fPIC
  -Wall
  -Wextra
@@ -18,6 +18,7 @@ SET(CXX_FLAGS
  -D_FILE_OFFSET_BITS=64
  -DHAVE_STDINT_H
  -DHAVE_INTTYPES_H
+ -std=c++11
  )
 
 STRING(REPLACE ";" " " CMAKE_CXX_FLAGS "${CXX_FLAGS}")
@@ -28,9 +29,9 @@ file(GLOB srcs1 "./*1.cc")
 file(GLOB srcs2 "./*2.cc")
 
 add_executable(example1 ${srcs1})
-target_link_libraries(example1 glog boost_system)
+target_link_libraries(example1)
 add_executable(example2 ${srcs2})
-target_link_libraries(example2 glog boost_system)
+target_link_libraries(example2)
 
 
  
